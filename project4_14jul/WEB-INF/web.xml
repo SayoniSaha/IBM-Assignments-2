@@ -1,0 +1,54 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>MyServlet</servlet-name>
+  	<display-name>MyServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlet.MyServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddLeagueServlet</servlet-name>
+  	<display-name>AddLeagueServlet</display-name>
+  	<description></description>
+  	<servlet-class>view.AddLeagueServlet</servlet-class>
+  	<init-param>
+  		<param-name>seasons</param-name>
+  		<param-value>Summer,Winter,Autumn,Monsoon</param-value>
+  	</init-param>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddController</servlet-name>
+  	<display-name>AddController</display-name>
+  	<description></description>
+  	<servlet-class>controller.AddController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SuccessServlet</servlet-name>
+  	<display-name>SuccessServlet</display-name>
+  	<description></description>
+  	<servlet-class>view.SuccessServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MyServlet</servlet-name>
+  	<url-pattern>/list_leagues.view</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddLeagueServlet</servlet-name>
+  	<url-pattern>/add_league.view</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddController</servlet-name>
+  	<url-pattern>/add_league.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SuccessServlet</servlet-name>
+  	<url-pattern>/success.view</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>
