@@ -4,22 +4,27 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.jsp</groupId>
-  <artifactId>project7_18jul</artifactId>
+  <groupId>com</groupId>
+  <artifactId>project8_18jul</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>project7_18jul Maven Webapp</name>
+  <name>spring-mvc2 Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
   <dependencies>
+		  <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-core</artifactId>
+           <version>5.3.28</version>
+       </dependency>
 	  <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>
@@ -59,8 +64,6 @@
     <version>0.9.1.2</version>
 </dependency>
 
-
-	  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -70,7 +73,7 @@
   </dependencies>
 
   <build>
-    <finalName>project7_18jul</finalName>
+    <finalName>project8_18jul</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
