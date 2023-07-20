@@ -10,7 +10,7 @@
 
 <body>
 
-	The student is confirmed: ${student.firstName} ${student.lastName}
+	The student is confirmed: ${student.firstName} ${student.lastName} ${student.email}
 
 </body>
 
