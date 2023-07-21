@@ -34,5 +34,23 @@ public class CustomerDaoImpl implements CustomerDao {
 	public void saveCustomer(Customer customer) {
 		 entityManager.persist(customer);
 	}
+	
+	@Override
+	@Transactional
+	public Customer findCustomerById(int customerId) {
+		return entityManager.find(Customer.class, customerId);
+	}
+
+	@Override
+	@Transactional
+	public Customer updateCustomer(Customer customer) {
+		return entityManager.merge(customer);
+	}
+
+	@Override
+	@Transactional
+	public void deleteCustomer(Customer customer) {
+		entityManager.remove(customer);
+	}
 
 }
