@@ -6,6 +6,8 @@ import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
@@ -20,9 +22,6 @@ public class Order {
 	@Id
 	@Column(name = "order_id")
 	private int order_id;
-	
-	@Transient
-    private List<Customer> customers;
 	
 	public Order() {
 		super();
@@ -53,12 +52,6 @@ public class Order {
 	public void setOrder_id(int order_id) {
 		this.order_id = order_id;
 	}
-	public List<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
-    }
+	
 	
 }

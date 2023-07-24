@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.model.Customer;
+import com.example.model.Order;
 import com.example.service.CustomerService;
+import com.example.service.OrderService;
 
 import java.util.List;
 import java.util.Random;
@@ -19,6 +21,7 @@ import java.util.Random;
 public class WebController {
 
 	private CustomerService customerService;
+	private OrderService orderService;
 
 	public WebController(CustomerService customerService) {
 		super();
@@ -82,4 +85,5 @@ public class WebController {
 		customerService.deleteCustomer(theCustomer);
 		return "redirect:/customer/list";
 	}
+	
 }

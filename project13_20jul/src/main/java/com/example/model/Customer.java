@@ -1,5 +1,7 @@
 package com.example.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -19,6 +21,8 @@ public class Customer {
 	public Customer() {
 		super();
 	}
+	
+	
 	public Customer(int customerId, String name, String email) {
 		super();
 		this.customerId = customerId;
