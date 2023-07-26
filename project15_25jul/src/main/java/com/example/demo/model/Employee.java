@@ -21,13 +21,17 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "employee_id")
 	private int employeeId;
-	@Column(name = "employee_name")
-	private String employeeName;
+	@Column(name = "first_name")
+	private String firstName;
+	@Column(name = "last_name")
+	private String lastName;
 	@Column(name = "salary")
 	private double salary;
-	public Employee(String employeeName, double salary) {
+
+	public Employee(String firstName, String lastName, double salary) {
 		super();
-		this.employeeName = employeeName;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.salary = salary;
 	}
 }

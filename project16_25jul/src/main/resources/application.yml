@@ -1,0 +1,14 @@
+server:
+  port: 8070
+spring:
+  datasource:
+    url: jdbc:h2:mem:testDB
+    username: root
+    password: root
+  jpa:
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2
+    

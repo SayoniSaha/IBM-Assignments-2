@@ -46,7 +46,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 		else
 		{
-			oEmployee.get().setEmployeeName(employee.getEmployeeName());
+			oEmployee.get().setFirstName(employee.getFirstName());
+			oEmployee.get().setLastName(employee.getLastName());
 			oEmployee.get().setSalary(employee.getSalary());
 			
 			employeeRepository.save(oEmployee.get());
@@ -64,6 +65,28 @@ public class EmployeeServiceImpl implements EmployeeService {
         } else {
             return Optional.empty();
         }
+    }
+	
+	@Override
+	public List<Employee> findByFirstName(String firstName) {
+		List<Employee> employees=employeeRepository.findByFirstName(firstName);
+		if(employees==null) {
+			return null;
+		}
+		else {
+			return employees;
+		}
+		
+	}
+	
+	@Override
+    public List<Employee> findByFirstNameOrLastName(String firstName, String lastName) {
+        return employeeRepository.findByFirstNameOrLastName(firstName, lastName);
+    }
+
+    @Override
+    public List<Employee> findByFirstNameAndLastName(String firstName, String lastName) {
+        return employeeRepository.findByFirstNameAndLastName(firstName, lastName);
     }
 
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.exception.EmployeeNotFoundException;
 import com.example.demo.model.Employee;
 import com.example.demo.service.EmployeeService;
 
@@ -52,7 +53,7 @@ public class EmployeeController {
 	public ResponseEntity<?> updateEmployee(@RequestBody Employee employee) {
 		Employee e=employeeService.updateEmployeeById(employee);
 		if(e==null) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee with employeeId "+employee.getEmployeeId()+"not found ");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee with employeeId "+employee.getEmployeeId()+" not found ");
 		}
 		else {
 			return ResponseEntity.status(HttpStatus.OK).body(e);
@@ -68,5 +69,36 @@ public class EmployeeController {
 	    	return new ResponseEntity<String>("Deleted",HttpStatus.OK);
 	    }
 	}
+	
+	@GetMapping("/find/{firstName}")
+	public ResponseEntity<?> findByFirstName(@PathVariable("firstName") String firstName) {
+		List<Employee> employees=employeeService.findByFirstName(firstName);
+		if(employees==null) {
+			throw new EmployeeNotFoundException("Employee with "+firstName+" not found");
+		}
+		else {
+			return ResponseEntity.status(HttpStatus.OK).body(employees);
+		}
+	}
+	
+	@GetMapping("/findByName/{firstName}/{lastName}")
+    public ResponseEntity<?> findByFirstNameOrLastName(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName) {
+        List<Employee> employees = employeeService.findByFirstNameOrLastName(firstName, lastName);
+        if (employees == null || employees.isEmpty()) {
+            throw new EmployeeNotFoundException("Employees with firstName: " + firstName + " or lastName: " + lastName + " not found");
+        } else {
+            return ResponseEntity.status(HttpStatus.OK).body(employees);
+        }
+    }
+
+    @GetMapping("/findByBothNames/{firstName}/{lastName}")
+    public ResponseEntity<?> findByFirstNameAndLastName(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName) {
+        List<Employee> employees = employeeService.findByFirstNameAndLastName(firstName, lastName);
+        if (employees == null || employees.isEmpty()) {
+            throw new EmployeeNotFoundException("Employees with firstName: " + firstName + " and lastName: " + lastName + " not found");
+        } else {
+            return ResponseEntity.status(HttpStatus.OK).body(employees);
+        }
+    }
 
 }

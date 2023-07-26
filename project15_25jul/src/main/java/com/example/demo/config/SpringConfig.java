@@ -20,9 +20,9 @@ public class SpringConfig implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		List<Employee> employees = new ArrayList<>();
-		employees.add(new Employee("abc", 100000));
-		employees.add(new Employee("efg", 200000));
-		employees.add(new Employee("ijk", 300000));
+		employees.add(new Employee("abc","cba", 100000));
+		employees.add(new Employee("efg","gfe", 200000));
+		employees.add(new Employee("ijk","kji", 300000));
 		employeeRepository.saveAll(employees);
 	}
 }

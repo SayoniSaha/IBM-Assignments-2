@@ -12,5 +12,10 @@ public interface EmployeeService {
 	Optional<Employee> getEmployeeById(int employeeId);
 	Employee updateEmployeeById(Employee employee);
 	Optional<Employee> deleteEmployeeById(int employeeId);
+	List<Employee> findByFirstName(String firstName);
+
+	List<Employee> findByFirstNameOrLastName(String firstName, String lastName);
+
+	List<Employee> findByFirstNameAndLastName(String firstName, String lastName);
 
 }
