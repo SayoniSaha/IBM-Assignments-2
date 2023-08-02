@@ -1,0 +1,16 @@
+server:
+  port: 9192
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/hr
+    username: root
+    password: root
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
