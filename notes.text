@@ -64,3 +64,25 @@ VALUES
 ('susan','ROLE_EMPLOYEE'),
 ('susan','ROLE_MANAGER'),
 ('susan','ROLE_ADMIN');
+
+
+****************************************************************************************************************************
+Docker:
+-----------------------------------
+docker build -t dnilay/my-product-service .
+
+docker images
+
+docker container run -p9090:9090 dnilay/my-product-service
+
+docker container ls
+
+docker container ls -a
+
+>docker container start 5a3bd58d20ed
+
+docker container logs 5a3bd58d20ed
+
+docker run -d -p 3306:3306 --name mysql-docker-container -e MYSQL_ROOT_PASSWORD=sergey -e MYSQL_DATABASE=photo_app -e MYSQL_USER=sergey -e MYSQL_PASSWORD=sergey mysql/mysql-server:latest
+
+https://docs.docker.com/get-started/
