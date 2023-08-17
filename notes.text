@@ -67,6 +67,7 @@ VALUES
 
 
 ****************************************************************************************************************************
+17/08/2023
 Docker:
 -----------------------------------
 docker build -t dnilay/my-product-service .
@@ -86,3 +87,7 @@ docker container logs 5a3bd58d20ed
 docker run -d -p 3306:3306 --name mysql-docker-container -e MYSQL_ROOT_PASSWORD=sergey -e MYSQL_DATABASE=photo_app -e MYSQL_USER=sergey -e MYSQL_PASSWORD=sergey mysql/mysql-server:latest
 
 https://docs.docker.com/get-started/
+
+ephemeral store
+
+https://docs.docker.com/storage/volumes/
