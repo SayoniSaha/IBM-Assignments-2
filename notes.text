@@ -88,6 +88,10 @@ docker run -d -p 3306:3306 --name mysql-docker-container -e MYSQL_ROOT_PASSWORD=
 
 https://docs.docker.com/get-started/
 
+ephemeral store
+
+https://docs.docker.com/storage/volumes/
+
 *****************************************************************************************************************************
 18/08/2023
 Kubernetes:
@@ -116,6 +120,5 @@ kubectl delete all -l app=todowebapp-h2
 kubectl delete all -l io.kompose.service=todo-web-application
 kubectl delete all -l io.kompose.service=mysql
 
-ephemeral store
-
-https://docs.docker.com/storage/volumes/
+https://www.docker.com/play-with-docker/
+https://training.play-with-docker.com/ops-s1-hello/
