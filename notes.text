@@ -88,6 +88,18 @@ docker run -d -p 3306:3306 --name mysql-docker-container -e MYSQL_ROOT_PASSWORD=
 
 https://docs.docker.com/get-started/
 
+*****************************************************************************************************************************
+18/08/2023
+Kubernetes:
+------------------------------------
+https://minikube.sigs.k8s.io/docs/start/
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+
+minikube start
+
+miniukube dashboard
+
 ephemeral store
 
 https://docs.docker.com/storage/volumes/
