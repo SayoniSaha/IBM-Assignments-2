@@ -100,6 +100,22 @@ minikube start
 
 miniukube dashboard
 
+
+kubectl version
+kubectl get nodes
+kubectl create deployment hello-world-rest-api --image=in28min/hello-world-rest-api:0.0.1.RELEASE
+kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
+kubectl create deployment todowebapp-h2 --image=in28min/todo-web-application-h2:0.0.1-SNAPSHOT
+kubectl expose deployment todowebapp-h2 --type=LoadBalancer --port=8080
+git clone https://github.com/in28minutes/kubernetes-crash-course.git
+cd 03-todo-web-application-mysql/backup/02-final-backup-at-end-of-course
+kubectl apply -f mysql-database-data-volume-persistentvolumeclaim.yaml,mysql-deployment.yaml,mysql-service.yaml
+kubectl apply -f config-map.yaml,secret.yaml,todo-web-application-deployment.yaml,todo-web-application-service.yaml
+kubectl delete all -l app=hello-world-rest-api
+kubectl delete all -l app=todowebapp-h2
+kubectl delete all -l io.kompose.service=todo-web-application
+kubectl delete all -l io.kompose.service=mysql
+
 ephemeral store
 
 https://docs.docker.com/storage/volumes/
